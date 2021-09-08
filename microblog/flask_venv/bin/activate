@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/vuno/Desktop/learning/git/biosignal_learning/Flask/microblog/flask_venv"
+VIRTUAL_ENV="/Users/vuno/Desktop/learning/Flask/microblog/flask_venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/vuno/Desktop/learning/git/biosignal_learning/Flask/microblog/flask_venv"
+set -gx VIRTUAL_ENV "/Users/vuno/Desktop/learning/Flask/microblog/flask_venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
