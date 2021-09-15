@@ -15,7 +15,17 @@
  - Chapter 4 : Database
    + installs ```flask-sqlalchemy``` and ```flask-migrate```
    + the tutorial uses SQLite, but I am trying to use PostgreSQL instead
-   + *TODO : psycopg2 error occurs when connecting to DB*
+   + psycopg2 error occurs when connecting to DB -> solved. use ```psycopg2-binary``` instead
+   + Flask is to be run from localhost by default. when using docker, add ```--host=0.0.0.0``` option to access Flask server in the container (and do not forget to add ```EXPOSE portnum``` to Dockerfile)
+   + network between containers use its name, for example, use ```db:``` instead of ```localhost:```
+   + docker-compse up! Flask and PostgreSQL containers are up and linked to each other.
+   + for multiple command for executing flask db migration, use
+   ```
+   command: bash -c "command 1 && command 2 && ... "
+   ```
+   + from the example microblog, ```User``` model crashes with PostgreSQL default table ```user```. need to avoid the name. Changed into ```Mbluser```
+   + Passing ```flask shell```, seems not to be used in docker environment.
+
 
 
 **Installed packages**
@@ -43,4 +53,4 @@
    + flask wrapper for Albemic, which is a DB migration framework for SQLAlchemy
 
 
- updated Sep 14 2021
+ updated Sep 15 2021

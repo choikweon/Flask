@@ -1,0 +1,18 @@
+services:
+  app:
+    command: bash -c "
+      flask db init &&
+      flask db migrate -m \"all at once\" &&
+      flask db upgrade &&
+      flask run -h 0.0.0.0 "
+    ports:
+      - 5000:5000
+    image: mbl:2.4
+    env_file:
+      - ./.env.dev
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pw
+      - POSTGRES_DB=mbldb
