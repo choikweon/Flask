@@ -25,7 +25,18 @@
    ```
    + from the example microblog, ```User``` model crashes with PostgreSQL default table ```user```. need to avoid the name. Changed into ```Mbluser```
    + Passing ```flask shell```, seems not to be used in docker environment.
-
+ - Chapter 5 : User Logins
+   + installs ```flask-login```, ```email-validator```
+   + ```@login_required``` decorator flashes unwanted messages. if I want to fix this, do I have to fix ```flask-login``` from the source?
+ - Chapter 6 : Profile Page and Avatars
+   + the tutorial uses Gravatar service to generate a picture from md5 hash of the email, but I chose to use a random portrait from <a href="https://www.eveonline.com">EVE Online</a>. using url for the image : ```https://images.evetech.net/characters/95######/portrait``` where # is a digit.
+   + adding more and more to the db. and making more templates and forms for them.
+ - Chapter 7 : Error Handling
+   + making template for some frequent errors : 404 and 500.
+   + logs into ```./log``` when ```DEBUG=False``` in config.py
+   + built another python container "debug" for ```python -m smtpd -n -c DebuggingServer localhost:8025```
+   + python mock mail server did work on localhost, but did not in new debug container. could not find out the reason. whatever. removed the debug container.
+   + at the end of the chapter, ```EditProfileForm``` overloads constructor to get a username argument passed to it. NOT fully understood. gotta study python inheritance and overloading part again.
 
 
 **Installed packages**
@@ -51,6 +62,13 @@
  - flask-migrate
    + created by Miguel Grinberg himself
    + flask wrapper for Albemic, which is a DB migration framework for SQLAlchemy
+ - psycopg2-binary
+   + used for Flask-PostgreSQL data interface. to be exact, python library for psql. ```psycopg2``` package exists, but somehow ```psycopg2-binary``` should be installed instead. ```psycopg2``` throws some error when intalled.
+   + not from the tutorial.
+ - flask-login
+   + user login module for Flask. keeps tracking the logged in user.
+ - email-validator
+   + as the name says...
 
 
- updated Sep 15 2021
+ updated Sep 16 2021
