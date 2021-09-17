@@ -37,6 +37,23 @@
    + built another python container "debug" for ```python -m smtpd -n -c DebuggingServer localhost:8025```
    + python mock mail server did work on localhost, but did not in new debug container. could not find out the reason. whatever. removed the debug container.
    + at the end of the chapter, ```EditProfileForm``` overloads constructor to get a username argument passed to it. NOT fully understood. gotta study python inheritance and overloading part again.
+ - Chapter 8 : Followers
+   + added user-user m:n relation ```followed```
+   + now my brain is getting overheated.
+   + I do not understand how ORM and SQLAlchemy is working.
+   + need to study ORM and SQLAlchemy, taking enough time. skipping for now.
+   + **!!** the code actuall generated a table called ```followers```. need to take a look at the code.
+   + added ```tests.py``` for unit testing.
+   + avatar test fails. sure.
+   + the other tests passed but the test cases used SQLite. meaningless.
+ - Chapter 9 : Pagination
+   + added ```PostForm``` for posting
+   + added ```explore``` function which renders index as explore page.
+   + ```{% if form %}``` to switch between index and explore
+   + pagination applied. using config ```POST_PER_PAGE```
+   + **??** uses ```request.args.get()``` the part I do not understand. comes from ```from flask import request```. need to study on it.
+   + user/<username> page still shows temp posts. did I miss something?
+   + when registering new user, the user is automatically logged in sometimes, or not logged in some of the times. need to check.
 
 
 **Installed packages**
@@ -71,4 +88,4 @@
    + as the name says...
 
 
- updated Sep 16 2021
+ updated Sep 17 2021
