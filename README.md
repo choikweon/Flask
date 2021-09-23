@@ -11,7 +11,7 @@
  - Chapter 3 : Web Forms
    + installs ```flask-wtf```
    + code blocks replace traditional html and js form code inside ```<form>``` 
-   + *??? what does ```form.hidden_tag```() do?* 
+   + _*??*_ what does ```form.hidden_tag```() do?
  - Chapter 4 : Database
    + installs ```flask-sqlalchemy``` and ```flask-migrate```
    + the tutorial uses SQLite, but I am trying to use PostgreSQL instead
@@ -42,7 +42,7 @@
    + now my brain is getting overheated.
    + I do not understand how ORM and SQLAlchemy is working.
    + need to study ORM and SQLAlchemy, taking enough time. skipping for now.
-   + **!!** the code actuall generated a table called ```followers```. need to take a look at the code.
+   + _*!!*_ the code actuall generated a table called ```followers```. need to take a look at the code.
    + added ```tests.py``` for unit testing.
    + avatar test fails. sure.
    + the other tests passed but the test cases used SQLite. meaningless.
@@ -51,9 +51,18 @@
    + added ```explore``` function which renders index as explore page.
    + ```{% if form %}``` to switch between index and explore
    + pagination applied. using config ```POST_PER_PAGE```
-   + **??** uses ```request.args.get()``` the part I do not understand. comes from ```from flask import request```. need to study on it.
+   + _*??*_ uses ```request.args.get()``` the part I do not understand. comes from ```from flask import request```. need to study on it.
    + user/<username> page still shows temp posts. did I miss something?
    + when registering new user, the user is automatically logged in sometimes, or not logged in some of the times. need to check.
+ - Chapter 10 : Email Support
+   + ~~added ```.env.dev``` to ```.gitignore``` temporally, because the file now contains my Google account and password (which is for email server configuration). I don't want to publish them into a public github repo.~~
+   + gmail does not allow 'low security apps' to access the account. should make gmail allow it in the account settings.
+   + tested flask-email in a seperate environment, and got ```RuntimeError: Working outside of application context.``` message. need to study what an "app" is in Flask.
+   + sending email works in ```with app.app_context():``` clause. app and context.
+     - does run without the clause if it runs within the app. _*??*_
+   + as email server is run in a seperate container, ```.env.dev``` is removed from ```.gitignore```
+   + email server did not work as expected: forgot ```--host=0.0.0.0``` as mentioned in Ch. 4. 으악 짜증나.. 이것땜에 똑같은 삽질을 반복함..
+
 
 
 **Installed packages**
@@ -86,6 +95,13 @@
    + user login module for Flask. keeps tracking the logged in user.
  - email-validator
    + as the name says...
+ - flask-mail
+   + sends email from the configured email server
+ - pyjwt
+   + python JSON web token
+ - requests
+   + sends http request
+   + _*!!*_ not from the tutorial, but i installed it to make a seperate mail server container and send a mail request to it.
 
 
- updated Sep 17 2021
+ updated Sep 23 2021

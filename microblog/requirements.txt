@@ -5,3 +5,6 @@ Flask-migrate
 psycopg2-binary
 Flask-login
 email-validator
+flask-mail
+pyjwt
+requests
