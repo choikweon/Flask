@@ -68,6 +68,9 @@
    + when sending an email from gmail server, "sender" and "text_body" does not appear in the mail recieved.
    + _*??*_ how does ```expires_in``` in ```jwt``` work?
    + skipped threading part, since I use a seperated email server.
+ - Chapter 11 : Facelift
+   + installs ```flask-bootstrap```
+
 
 
 
@@ -108,6 +111,8 @@
  - requests
    + sends http request
    + _*!!*_ not from the tutorial, but i installed it to make a seperate mail server container and send a mail request to it.
+ - flask-bootstrap
+   + flask version of bootstrap
 
 
  updated Sep 23 2021
