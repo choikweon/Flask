@@ -70,7 +70,17 @@
    + skipped threading part, since I use a seperated email server.
  - Chapter 11 : Facelift
    + installs ```flask-bootstrap```
-
+   + ... just copy and pasted the templates from the tutorial github
+   + looks better!
+ - Chapter 12 : Dates and Times
+   + installs ```flask-moment```
+   + does some TZ works
+ - Chapter 13 : I18n and L10n
+   + installs ```flask-babel```
+   + _*??*_ which translation engine does this use? will it translate into/from korean?
+   + learned that i18n means internationalization, and l10n means localization (...)
+   + ```_()``` and ```_l()```...
+   + _*??* lazy evaluation?_
 
 
 
@@ -113,6 +123,10 @@
    + _*!!*_ not from the tutorial, but i installed it to make a seperate mail server container and send a mail request to it.
  - flask-bootstrap
    + flask version of bootstrap
+ - flask-moment
+   + also created by Grinberg. addon for <a href="http://momentjs.com/">Moment.js</a>.
+ - flask-babel
+   + translator for flask
 
 
- updated Sep 23 2021
+ updated Sep 24 2021
