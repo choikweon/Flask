@@ -42,7 +42,7 @@
    + now my brain is getting overheated.
    + I do not understand how ORM and SQLAlchemy is working.
    + need to study ORM and SQLAlchemy, taking enough time. skipping for now.
-   + _*!!*_ the code actuall generated a table called ```followers```. need to take a look at the code.
+   + _*!!*_ the code actually generated a table called ```followers```. need to take a look at the code.
    + added ```tests.py``` for unit testing.
    + avatar test fails. sure.
    + the other tests passed but the test cases used SQLite. meaningless.
@@ -55,6 +55,8 @@
    + user/<username> page still shows temp posts. did I miss something?
    + when registering new user, the user is automatically logged in sometimes, or not logged in some of the times. need to check.
  - Chapter 10 : Email Support
+   + installs ```flask-email``` and ```pyjwt``` (imports as ```jwt```)
+   + installed ```requests``` for sending email request to a seperate container
    + ~~added ```.env.dev``` to ```.gitignore``` temporally, because the file now contains my Google account and password (which is for email server configuration). I don't want to publish them into a public github repo.~~
    + gmail does not allow 'low security apps' to access the account. should make gmail allow it in the account settings.
    + tested flask-email in a seperate environment, and got ```RuntimeError: Working outside of application context.``` message. need to study what an "app" is in Flask.
@@ -62,6 +64,10 @@
      - does run without the clause if it runs within the app. _*??*_
    + as email server is run in a seperate container, ```.env.dev``` is removed from ```.gitignore```
    + email server did not work as expected: forgot ```--host=0.0.0.0``` as mentioned in Ch. 4. 으악 짜증나.. 이것땜에 똑같은 삽질을 반복함..
+   + seperate email server is up!
+   + when sending an email from gmail server, "sender" and "text_body" does not appear in the mail recieved.
+   + _*??*_ how does ```expires_in``` in ```jwt``` work?
+   + skipped threading part, since I use a seperated email server.
 
 
 
