@@ -78,9 +78,21 @@
  - Chapter 13 : I18n and L10n
    + installs ```flask-babel```
    + _*??*_ which translation engine does this use? will it translate into/from korean?
+     - did not really used any engine. all the translated texts are supposed to provided by the developer.
    + learned that i18n means internationalization, and l10n means localization (...)
    + ```_()``` and ```_l()```...
    + _*??* lazy evaluation?_
+   + _*??* how are ```_()```, ```_l()```, and rendering ordered in the process?_
+   + translation complete!
+   + need to exec ```pybabel extract, export, update, init, compile``` to apply them all.
+   + command group enhancements : ```app/cli.py``` file would define custom flask command options but i will skip this part because the service runs in a docker container.
+ - Chapter 14 : Ajax
+   + installs ```langdetect```
+   + Single Page Applications. SPAs. written in JS mostly. client-side executes the code.
+   + Ajax : Asynchronous JavaScript and XML (XML replaced by JSON recently).
+   + uses jQuery
+   + JS involved, getting more complex.
+   
 
 
 
@@ -110,6 +122,7 @@
  - psycopg2-binary
    + used for Flask-PostgreSQL data interface. to be exact, python library for psql. ```psycopg2``` package exists, but somehow ```psycopg2-binary``` should be installed instead. ```psycopg2``` throws some error when intalled.
    + not from the tutorial.
+   + need to update to pip version 21.2.4
  - flask-login
    + user login module for Flask. keeps tracking the logged in user.
  - email-validator
@@ -127,6 +140,8 @@
    + also created by Grinberg. addon for <a href="http://momentjs.com/">Moment.js</a>.
  - flask-babel
    + translator for flask
+ - langdetect
+   + language detection. Detects the language used to write the string. not flask-based.
 
 
- updated Sep 24 2021
+ updated Sep 27 2021

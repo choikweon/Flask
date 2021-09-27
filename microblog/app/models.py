@@ -37,7 +37,7 @@ class Mbluser(UserMixin, db.Model):
         #C/ let's just waste it
         digest=md5(self.email.lower().encode('utf-8')).hexdigest()
         size=(int(digest, 16))%1000000
-        return 'https://images.evetech.net/characters/95'+str(size)+'/portrait'
+        return 'https://images.evetech.net/characters/95'+str(size).zfill(6)+'/portrait'
 
     def follow(self, user):
         if not self.is_following(user):
@@ -80,6 +80,7 @@ class Post(db.Model):
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('mbluser.id'))
+    language = db.Column(db.String(5))
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)

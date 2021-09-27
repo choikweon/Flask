@@ -19,6 +19,7 @@ login=LoginManager(app)
 login.login_view='login'
 bootstrap=Bootstrap(app)
 moment=Moment(app)
+babel=Babel(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -48,6 +49,7 @@ if not app.debug:
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    # return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return 'ko'
 
 from app import routes, models, errors

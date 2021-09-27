@@ -9,4 +9,6 @@ flask-mail
 pyjwt
 requests
 flask-bootstrap
+flask-moment
 flask-babel
+langdetect
