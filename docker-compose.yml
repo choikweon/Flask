@@ -7,7 +7,7 @@ services:
       flask run -h 0.0.0.0 "
     ports:
       - 5000:5000
-    image: mbl:14.0.0
+    image: mbl:14.0.1
     env_file:
       - ./.env.dev
   db:
@@ -16,10 +16,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pw
       - POSTGRES_DB=mbldb
-  email:
-    command: flask run -h 0.0.0.0
-    image: fmail:1.0.2
-    ports:
-      - 5001:5001
+  # email:
+  #   command: flask run -h 0.0.0.0
+  #   image: fmail:1.0.2
+  #   ports:
+  #     - 5001:5001
 
 

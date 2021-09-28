@@ -91,7 +91,9 @@
    + Single Page Applications. SPAs. written in JS mostly. client-side executes the code.
    + Ajax : Asynchronous JavaScript and XML (XML replaced by JSON recently).
    + uses jQuery
-   + JS involved, getting more complex.
+   + JS involved, getting more complexed.
+   + what does ```g``` do?
+   + why do we use ```g.locale``` when we can get the preffered language from the browser?
    
 
 
