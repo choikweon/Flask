@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 import unittest
-from app import app, db
+from app import db
 from app.models import Mbluser, Post
 
 class UserModelCase(unittest.TestCase):
