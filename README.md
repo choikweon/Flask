@@ -94,6 +94,13 @@
    + JS involved, getting more complexed.
    + what does ```g``` do?
    + why do we use ```g.locale``` when we can get the preffered language from the browser?
+ - Chapter 15 : A Better Application Structure
+   + using blueprint, the whole service is modulized into three parts.
+   + changes many lines of codes, and regroups files into directories.
+   + errors WILL occur, so this chapter is branched into "blueprint"
+   + errors DID occur, fixed them and now the app runs without errors, but not as intended.
+   + pages are not routed properly, so cannot access pages from url.
+   + 갑자기 이렇게 바꾸면 정신없음...
    
 
 

@@ -7,7 +7,7 @@ services:
       flask run -h 0.0.0.0 "
     ports:
       - 5000:5000
-    image: mbl:14.0.1
+    image: mbl:15.0.0
     env_file:
       - ./.env.dev
   db:
