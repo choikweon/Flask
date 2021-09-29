@@ -107,8 +107,20 @@
    + and more errors..
    + and more errors...
    + fixed all errors I could found, but there may be more.
-
-   
+ - Chapter 16 : Full-Text Search
+   + installs ```elasticsearch```
+   + needed the engine installed, not only the python module. -> here goes docker.
+   + ... the license system is somehow complex.
+   + elasticsearch is no more open-source and 혹시라도 모르니까... I will skip this part.
+ - Chapter 17, 18, 19 : Deployment on Linux, Heroku, Docker Containers
+   + installs ```gunicorn```
+   + tried using amazon ECS, which deploys docker container
+     - failed. no idea what to do. also, if I somehow manage to make it work, the cost will be more expensive than lightsail.
+   + instead, used aws lightsail ubuntu server
+   + each containers were safe, but the difference in OS made it difficult to move to the server
+   + anyways, the app is now deployed on an aws server.
+   + the page is on : http://3.37.58.29
+     - will be down in a few days, after testing.  
 
 
 
@@ -158,6 +170,11 @@
    + translator for flask
  - langdetect
    + language detection. Detects the language used to write the string. not flask-based.
+ - ~~elasticsearch~~
+   + ~~a text search engine~~
+ - gunicorn
+   + a WSGI tool, which is critical to make the app open to the world.
+   + web app in the debug mode is too fragile. need a WSGI for handling multiple requests.
 
 
- updated Sep 28 2021
+ updated Sep 29 2021
