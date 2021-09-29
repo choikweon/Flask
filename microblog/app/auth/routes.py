@@ -1,10 +1,11 @@
 from flask import render_template, flash, redirect, url_for, request, jsonify, g
-from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
+from app import db
+from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import Mbluser, Post
-from app.email import send_password_reset_email
+from app.auth.email import send_password_reset_email
 from app.translate import translate
+from app.auth import bp
 from werkzeug.urls import url_parse
 from datetime import datetime
 from flask_babel import _, get_locale
@@ -27,7 +28,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.index')
         return redirect(next_page)
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template('auth/login.html', title='Sign In', form=form)
 
 @bp.route('/logout')
 def logout():
@@ -46,7 +47,7 @@ def register():
         db.session.commit()
         flash(_('Congratulations, you are now a registered user!'))
         return redirect(url_for('auth.login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('auth/register.html', title='Register', form=form)
 
 @bp.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
@@ -59,7 +60,7 @@ def reset_password_request():
             send_password_reset_email(user)
         flash(_('Check your email for the instructions to reset your password'))
         return redirect(url_for('auth.login'))
-    return render_template('reset_password_request.html', title='Reset Password', form=form)
+    return render_template('auth/reset_password_request.html', title='Reset Password', form=form)
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
@@ -74,4 +75,4 @@ def reset_password(token):
         db.session.commit()
         flash('Your password has been reset.')
         return redirect(url_for('auth.login'))
-    return render_template('reset_password.html', form=form)
+    return render_template('auth/reset_password.html', form=form)

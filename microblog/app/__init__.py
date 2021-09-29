@@ -33,6 +33,15 @@ def create_app(config_class=Config):
     moment.init_app(app)
     babel.init_app(app)
 
+    from app.errors import bp as errors_bp
+    app.register_blueprint(errors_bp)
+
+    from app.auth import bp as auth_bp
+    app.register_blueprint(auth_bp, url_prefix='/auth')
+
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
+
     if not app.debug:
         if app.config['MAIL_SERVER']:
             auth = None
@@ -48,15 +57,6 @@ def create_app(config_class=Config):
                 credentials=auth, secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
-
-            from app.errors import bp as errors_bp
-            app.register_blueprint(errors_bp)
-
-            from app.auth import bp as auth_bp
-            app.register_blueprint(auth_bp, url_prefix='/auth')
-
-            from app.main import bp as main_bp
-            app.register_blueprint(main_bp)
 
         if not os.path.exists('logs'):
             os.mkdir('logs')

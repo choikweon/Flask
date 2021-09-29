@@ -101,6 +101,13 @@
    + errors DID occur, fixed them and now the app runs without errors, but not as intended.
    + pages are not routed properly, so cannot access pages from url.
    + 갑자기 이렇게 바꾸면 정신없음...
+   + problems solved : did not include "bp"s created into the app.
+   + everything screwed up, all hierarchy mixed up. no idea why the author did blueprinting after creating the app to the end.
+   + and more errors.
+   + and more errors..
+   + and more errors...
+   + fixed all errors I could found, but there may be more.
+
    
 
 
