@@ -4,12 +4,12 @@ services:
       flask db init &&
       flask db migrate -m \"all at once\" &&
       flask db upgrade &&
-      #lask run -h 0.0.0.0
-      gunicorn -b 0.0.0.0:8888 -w 4 microblog:app"
+      flask run -h 0.0.0.0"
+      #gunicorn -b 0.0.0.0:8888 -w 4 microblog:app"
     ports:
       - 5000:5000
       - 8888:8888
-    image: mbl:19.0.0
+    image: mbl:20.0.0
     env_file:
       - ./.env.dev
   db:

@@ -122,6 +122,12 @@
    + the page is on : http://3.37.58.29
      - will be down in a few days, after testing.  
 
+ - Chapter 20 : Some JavaScript Magic
+   + using bootstrap ```popover()``` and ajax function, makes a mouse-hover popover interface.
+   + need to study more about async request and calls.
+   + flask + html + db + bootstrap + JS with ajax = ???
+   <img src="images/whyworks.jpg">
+
 
 
 **Installed packages**
@@ -177,4 +183,4 @@
    + web app in the debug mode is too fragile. need a WSGI for handling multiple requests.
 
 
- updated Sep 29 2021
+ updated Sep 30 2021
