@@ -126,7 +126,23 @@
    + using bootstrap ```popover()``` and ajax function, makes a mouse-hover popover interface.
    + need to study more about async request and calls.
    + flask + html + db + bootstrap + JS with ajax = ???
-   <img src="images/whyworks.jpg">
+   <img src="images/whyworks.jpg" width=240>
+
+ - Chapter 21 : User Notification
+   + nothing much. adding another db model and pages for private messages.
+   + adding and updating notification badge using repeating ajax call of 10 seconds
+
+ - Chapter 22 : Background Jobs
+   + installs ```rq```
+   + makes db model for task queue
+   + the email is sent using rq in this chapter, but I already have a seperate email server.
+   + implemets user post export using task queue.
+   + not actually implemented in this project
+   + _*??* why are the tasks written in the database when redis takes care of the queue? just to show the progress %?_
+
+ - Chapter 23 : Application Programming Interfaces (APIs)
+   + installs ```flask-httpauth```
+   + implements REST API for the website.
 
 
 
@@ -181,6 +197,33 @@
  - gunicorn
    + a WSGI tool, which is critical to make the app open to the world.
    + web app in the debug mode is too fragile. need a WSGI for handling multiple requests.
+ - ~~rq~~
+   + ~~redis queue.~~ 
+ - flask-httpauth
+   + authorization using token
 
 
- updated Sep 30 2021
+**Final Comment**
+
+와... 뭐라고 해야 할지 모르겠는데요, 지금까지 알던건 html과 약간의 css, js였고, 웹 페이지는 직접 html을 깎아가며 만들었고 db도 직접 세팅을 해야 했습니다. 그리고 서버는 아파치로 돌렸고요. 그런데... 플라스크는 그냥 flask run 명령어 하나에 모든게 다 되네요.
+그리도 붙일 수 있는 모듈도 너무 많아서...
+<img src="/images/toomany.jpg" width=240>
+대충 이런 느낌입니다. 오히려 그냥 붙이기만 하면 되는게 너무 많아서 당황스럽습니다.
+다만, 모든 것들이 다 pip 패키지에 포장되어서 배달되기 때문에, 그 안에서 무슨 일들이 일어나고 있는지 알 필요가 없다는게 조금 찝찝합니다. 그렇다고 이 찝찝함을 해소하기 위해 패키지를 다 뜯어 볼 수도 없고.
+
+이 저자, Miguel Grinberg, 정말 대단합니다. 많은 튜토리얼들을 봐 왔지만, 이렇게 아무것도 없는 백지에서부터 실제 돌아가는, 그리고 뭔가 쓸데도 있어보이는 (실제로는 없지만) 서비스를 만들기까지 모든 과정을 단계별로 하나씩 자세히 설명해주는 튜토리얼은 처음입니다. 정말 "Mega" Tutorial이라고 할 만 합니다.
+
+거의 3주동안 23개의 챕터를 다 봤지만, 이제 Flask를 알줄 아냐고 물어본다면, 부끄럽게도 대답은 '아니다' 라고 할 것 같습니다. 이 "메가" 튜토리얼에서 너무나도 잘 떠먹여 준 덕분에, 큰 삽질을 하지 않고 튜토리얼을 따라갈 수 있었습니다. 하지만 진짜 공부는 삽질에서 온다고 생각합니다. 이 튜토리얼을 따라가면서, 시키는 대로 하지 않고 제 마음대로 몇 군데 바꿔서 진행한 곳이 있는데, 예를 들어 처음부터 도커로 어플리케이션을 띄워서 시작했으며, db도 sqlite를 사용하지 않고 PostgreSQL로 도커에 따로 띄워서 진행 했습니다. 물론 이 과정에서 많은 삽질을 했고, 덕분에 도커 사용은 어느정도 익힌 듯 합니다. 하지만 플라스크는, 쉽게 받아먹은 만큼 머리에 완전히 박히지 않았고, 튜토리얼에서 만든 작은 서비스를 혼자서 다시 만들어 보라고 하면, 못 할거라고 생각합니다.
+
+물론 프로그래밍의 10%는 직접 코딩하는것이고, 90%는 다른데서 긁어온 코드와 Stack Overflow라고 하긴 하지만, 그래도 제 스스로 평가하기에 제가 이 튜토리얼을 따라가면서 플라스크를 제대로 배웠다고 생각하지는 않습니다.
+
+<img src="images/whyworks.jpg" width=240> <img src="images/whyworks.jpg" width=240> <img src="images/whyworks.jpg" width=240>
+
+...을 반복하면서 와! 신기하다! 라고 생각하는 것의 연속이었던 것 같네요.
+특히 자바스크립트와 ajax가 들어가면서 특히 더요.
+
+플라스크와 웹을 배우면서 생각보다 많은 시간이 걸렸는데, 돌아보면 이렇게 "제대로 배운것 같지는 않은데요..." 라고 스스로 평가하게 되니 너무나 아쉽습니다. 그래도 앞으로 회사에서 계속 맡은 일을 하면서, 그리고 삽질을 하면서(...) 점점 더 실력이 늘 거라고 생각합니다.
+
+또, 앞으로 남는 시간에 개인 프로젝트로 제가 가진 트레이딩 카드를 정리하고 파는 웹사이트를 만들려고 하는데, 이때 다시 Flask를 이용해 보려고 합니다. 이 때는 처음부터 모든 것을 직접 만들어야 하니까, 이 과정을 거치고 나면 또 어느정도 자신있게, 플라스크로 뭔가 할 수 있게 되지 않을까요.
+
+ updated Oct 1 2021

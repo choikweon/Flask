@@ -9,7 +9,7 @@ services:
     ports:
       - 5000:5000
       - 8888:8888
-    image: mbl:20.0.0
+    image: mbl:23.0.0
     env_file:
       - ./.env.dev
   db:
